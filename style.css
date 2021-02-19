@@ -1,0 +1,220 @@
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+}
+
+:root{
+    --celula-size: 100px;
+    --mark-size: calc(var(--celula-size) * .9);
+}
+
+body{
+    margin: 0;
+}
+
+.borda {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.celula {
+    height: var(--celula-size);
+    width: var(--celula-size);
+    align-items: center;
+    border: 1px solid rgb(17, 32, 238);
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+}
+
+.celula:first-child,
+.celula:nth-child(2),
+.celula:nth-child(3) {
+    border-top: none;
+}
+
+.celula:last-child,
+.celula:nth-child(8),
+.celula:nth-child(7) {
+    border-bottom: none;
+}
+
+.celula:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.celula:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.celula.x::before,
+.celula.x::after,
+.celula.circle::before {
+    background-color: black;
+}
+
+.borda.x .celula:not(.x):not(.circle):hover::before,
+.borda.x .celula:not(.x):not(.circle):hover::after,
+.borda.circle .celula:not(.x):not(.circle):hover::before {
+    background-color: grey;
+}
+
+.celula.x::before,
+.celula.x::after,
+.borda.x .celula:not(.x):not(.circle):hover::before,
+.borda.x .celula:not(.x):not(.circle):hover::after {
+    content: '';
+    height: var(--mark-size);
+    width: calc(var(--mark-size) * .15);
+    position: absolute;
+}
+
+.celula.x::before,
+.borda.x .celula:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg);
+}
+
+.celula.x::after,
+.borda.x .celula:not(.x):not(.circle):hover::after {
+    transform: rotate(-45deg);
+}
+
+.celula.circle::before,
+.celula.circle::after,
+.borda.circle .celula:not(.x):not(.circle):hover::before,
+.borda.circle .celula:not(.x):not(.circle):hover::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+}
+
+.celula.circle::before,
+.borda.circle .celula:not(.x):not(.circle):hover::before {
+    height: var(--mark-size);
+    width: var(--mark-size);
+}
+
+.celula.circle::after,
+.borda.circle .celula:not(.x):not(.circle):hover::after {
+    height: calc(var(--mark-size) * .7);
+    width: calc(var(--mark-size) * .7);
+    background-color: #fff;
+}
+
+.msg_vencedor {
+    font-size: 5rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .9);
+    position: fixed;
+    display: none;
+}
+
+.msg_vencedor button {
+    font-size: 3rem;
+    padding: .25em .5em;
+    border: 1px solid black;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.msg_vencedor button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+.msg_vencedor.show {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
