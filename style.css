@@ -12,6 +12,7 @@
 
 body{
     margin: 0;
+    background-color: #101010;
 }
 
 .borda {
@@ -59,7 +60,7 @@ body{
 .celula.x::before,
 .celula.x::after,
 .celula.circle::before {
-    background-color: black;
+    background-color: rgb(0, 29, 252);
 }
 
 .borda.x .celula:not(.x):not(.circle):hover::before,
@@ -117,9 +118,12 @@ body{
     justify-content: center;
     flex-direction: column;
     top: 0;
-    bottom: 0;.borda.circle .celula:not(.x):not(.circle):hover::before,
+    bottom: 0;
+    left: 0;
+    right: 0;
     position: fixed;
     display: none;
+    background-color: rgba(0, 0, 0, .9);
 }
 
 .msg_vencedor button {
