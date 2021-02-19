@@ -24,7 +24,7 @@ O jogo pode ser jogado sobre um tabuleiro ou mesmo sendo riscado sobre um pedaç
 🏆<a href="https://www.superprof.com.br/aprenda-python-maneira-correta-com-exercicios-fixacao-bonus-sobre-games.html">Python</a> 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 🏆<a href="https://www.superprof.com.br/html-css-javascript-isso-mesmo-tudo-curso-para-inciantes-intermediarios.html">HTML + CSS + JS</a> 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
 🏆<a href="https://www.superprof.com.br/aulas-banco-dados-com-linguagem-sql-zero-para-iniciantes.html">MySQL</a>
 
 <hr/>
