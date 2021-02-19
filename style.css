@@ -117,10 +117,7 @@ body{
     justify-content: center;
     flex-direction: column;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, .9);
+    bottom: 0;.borda.circle .celula:not(.x):not(.circle):hover::before,
     position: fixed;
     display: none;
 }
@@ -142,79 +139,4 @@ body{
 .msg_vencedor.show {
     display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
