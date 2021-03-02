@@ -1,58 +1,89 @@
-const
-    classX = 'x'
-
-const classCirculo = 'circle'
-const combVence = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [2, 5, 8],
-    [1, 4, 7],
-    [2, 4, 6],
-    [0, 4, 8]
+const classX = 'x'
+const classO = 'circle'
+const combinacaoVencedor = [
+ [0, 1, 2],
+ [3, 4, 5],
+ [6, 7, 8],
+ [0, 3, 6],
+ [1, 4, 7],
+ [2, 5, 8],
+ [0, 4, 8],
+ [2, 4, 6]
 ]
-
-const celulaElement = document.querySelectorAll('[data-celula]')
-const bordaElement = document.getElementById('borda')
-const msg_vencedorElement = document.getElementById('msgvencedor')
-const bt_reiniciar = document.getElementById('bt_reiniciar')
-const msg_vencedor_text = document.querySelector(['data-msg_vencedor'])
-
-let circleTurn
+const celulaElements = document.querySelectorAll('[data-celula]')
+const borda = document.getElementById('borda')
+const winningMessageElement = document.getElementById('winningMessage')
+const btReiniciar = document.getElementById('btReiniciar')
+const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
+let turnoO
 
 iniciar()
-bt_reiniciar.addEventListener('click', iniciar)
 
-function iniciar(){
-    
+btReiniciar.addEventListener('click', iniciar)
+
+function iniciar() {
+ turnoO = false
+ celulaElements.forEach(celula => {
+ celula.classList.remove(classX)
+ celula.classList.remove(classO)
+ celula.removeEventListener('click', aoclicar)
+ celula.addEventListener('click', aoclicar, { once: true })
+ })
+ setHoverBorda()
+ winningMessageElement.classList.remove('show')
 }
 
-function aoclicar(){
-
+function aoclicar(e) {
+ const celula = e.target
+ const currentClass = turnoO ? classO : classX
+ marcarCelula(celula, currentClass)
+ if (checkVencedor(currentClass)) {
+ final(false)
+ } else if (empatou()) {
+ final(true)
+ } else {
+ trocarJogador()
+ setHoverBorda()
+ }
 }
 
-function marcar(){
-
+function final(empate) {
+ if (empate) {
+ winningMessageTextElement.innerText = 'Ops, empatou!!!'
+ } else {
+ winningMessageTextElement.innerText = `${turnoO ? "O 'o'" : "O 'x'"} Venceu!!!`
+ }
+ winningMessageElement.classList.add('show')
 }
 
-function trocarJogador(){
-
+function empatou() {
+ return [...celulaElements].every(celula => {
+ return celula.classList.contains(classX) || celula.classList.contains(classO)
+ })
 }
 
-
-function empate(){
-
+function marcarCelula(celula, currentClass) {
+ celula.classList.add(currentClass)
 }
 
-function final(){
-
+function trocarJogador() {
+ turnoO = !turnoO
 }
 
-function checkVencedor(){
-    
+function setHoverBorda() {
+ borda.classList.remove(classX)
+ borda.classList.remove(classO)
+ if (turnoO) {
+ borda.classList.add(classO)
+ } else {
+ borda.classList.add(classX)
+ }
 }
 
-function defQuadro(){
-
+function checkVencedor(currentClass) {
+ return combinacaoVencedor.some(combinacao => {
+ return combinacao.every(index => {
+ return celulaElements[index].classList.contains(currentClass)
+ })
+ })
 }
