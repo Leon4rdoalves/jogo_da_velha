@@ -26,7 +26,33 @@ bt_reiniciar.addEventListener('click', iniciar)
 
 function iniciar(){
     
+}
+
+function aoclicar(){
+
+}
+
+function marcar(){
+
+}
+
+function trocarJogador(){
+
+}
 
 
+function empate(){
+
+}
+
+function final(){
+
+}
+
+function checkVencedor(){
+    
+}
+
+function defQuadro(){
 
 }
